@@ -4,9 +4,11 @@ import com.sda.mihai.bookmanagement.utils.SessionManager;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
-public class BaseRepositoryImpl<T> implements BaseRepository <T> {
+public class BaseRepositoryImpl<T> implements BaseRepository<T> {
     private Class<T> entityClass;
 
     public BaseRepositoryImpl(Class<T> entityClass) {
@@ -67,7 +69,8 @@ public class BaseRepositoryImpl<T> implements BaseRepository <T> {
     }
 
     @Override
-    public void delete(T entity) {Transaction transaction = null;
+    public void delete(T entity) {
+        Transaction transaction = null;
 
         try (Session session = SessionManager.getSessionFactory().openSession()) {
 
@@ -85,5 +88,15 @@ public class BaseRepositoryImpl<T> implements BaseRepository <T> {
             }
         }
 
+    }
+
+    @Override
+    public List<T> findALl() {
+        try (Session session = SessionManager.getSessionFactory().openSession()) {
+            return session.createQuery("FROM " + entityClass.getName(), entityClass).list();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return new ArrayList<>();
+        }
     }
 }

@@ -2,7 +2,6 @@ package com.sda.mihai.bookmanagement;
 
 import com.sda.mihai.bookmanagement.controller.AuthorController;
 import com.sda.mihai.bookmanagement.menu.UserOption;
-import com.sda.mihai.bookmanagement.repository.AuthorRepository;
 import com.sda.mihai.bookmanagement.repository.AuthorRepositoryImpl;
 import com.sda.mihai.bookmanagement.service.AuthorServiceImpl;
 import com.sda.mihai.bookmanagement.utils.SessionManager;
@@ -29,6 +28,9 @@ public class Main {
             switch (userOption) {
                 case CREATE_AUTHOR:
                     authorController.createAuthor();
+                    break;
+                case SHOW_ALL_AUTHORS:
+                    authorController.showAllAuthors();
                     break;
                 case EXIT:
                     System.out.println("Goodbye!");

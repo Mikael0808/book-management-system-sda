@@ -1,7 +1,6 @@
 package com.sda.mihai.bookmanagement.model;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 @Table(name = "author")

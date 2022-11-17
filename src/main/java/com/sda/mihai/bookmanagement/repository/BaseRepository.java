@@ -1,5 +1,6 @@
 package com.sda.mihai.bookmanagement.repository;
 
+import java.util.List;
 import java.util.Optional;
 
 public interface BaseRepository<T> {
@@ -11,4 +12,5 @@ public interface BaseRepository<T> {
 
     void delete(T entity);
 
+    List<T> findALl();
 }
