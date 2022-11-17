@@ -8,6 +8,8 @@ import java.util.List;
 public interface AuthorService {
     void createAuthor(String firstName, String lastName) throws InvalidParameterException;
 
+    void updateAuthor(int authorId, String firstName, String lastName) throws InvalidParameterException;
+
     List<Author> getAllAuthors();
 
 }
