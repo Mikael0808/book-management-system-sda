@@ -1,6 +1,5 @@
 package com.sda.mihai.bookmanagement.repository;
 
-
 import java.util.Optional;
 
 public interface BaseRepository<T> {
