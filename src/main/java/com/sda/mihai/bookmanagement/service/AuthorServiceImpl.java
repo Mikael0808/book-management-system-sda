@@ -2,7 +2,6 @@ package com.sda.mihai.bookmanagement.service;
 
 import com.sda.mihai.bookmanagement.model.Author;
 import com.sda.mihai.bookmanagement.repository.AuthorRepository;
-import com.sda.mihai.bookmanagement.repository.AuthorRepositoryImpl;
 import com.sda.mihai.bookmanagement.service.exceptions.InvalidParameterException;
 
 import javax.persistence.EntityNotFoundException;
