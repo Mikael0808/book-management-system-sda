@@ -32,4 +32,17 @@ public class BookController {
             System.out.println("internal system error");
         }
     }
+
+    public void showAllBooks() {
+        bookService.getAllBooks().stream()
+                .forEach(book ->
+                        System.out.println(
+                                "Book id: " + book.getId()
+                                        + " title " + book.getTitle()
+                                        + " author" + book.getAuthor().getFirstname()
+                                        + " " + book.getAuthor().getLastname()
+                        )
+                );
+
+    }
 }
