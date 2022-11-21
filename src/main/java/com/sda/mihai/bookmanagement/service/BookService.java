@@ -1,6 +1,5 @@
 package com.sda.mihai.bookmanagement.service;
 
-import com.sda.mihai.bookmanagement.model.Author;
 import com.sda.mihai.bookmanagement.model.Book;
 import com.sda.mihai.bookmanagement.service.exceptions.InvalidParameterException;
 

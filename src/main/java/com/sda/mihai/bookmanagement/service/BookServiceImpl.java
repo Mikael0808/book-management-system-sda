@@ -24,10 +24,10 @@ public class BookServiceImpl implements BookService {
     @Override
     public void createBook(String title, String description, int authorId) throws InvalidParameterException {
         if (title == null || title.isBlank() || title.length() < 3) {
-            throw new InvalidParameterException("Provide value for title: " + title + "is invalid!");
+            throw new InvalidParameterException("Provide value for title: " + title + " is invalid!");
         }
-        if (description == null || title.isBlank() || title.length() < 10) {
-            throw new InvalidParameterException("Provide value for description: " + description + "is invalid!");
+        if (description == null || description.isBlank() || description.length() < 10) {
+            throw new InvalidParameterException("Provide value for description: " + description + " is invalid!");
         }
         if (authorId < 1) {
             throw new InvalidParameterException("Provide value for authorId: " + authorId + " is invalid!");
