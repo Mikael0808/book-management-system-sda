@@ -49,6 +49,19 @@ public class AuthorServiceImpl implements AuthorService {
     }
 
     @Override
+    public void deleteAuthor(int authorId) throws InvalidParameterException {
+        if (authorId < 1) {
+            throw new InvalidParameterException("Provide value for authorId: " + authorId + " is invalid!");
+        }
+        Optional<Author> authorOptional = authorRepository.findById(authorId);
+        if (authorOptional.isEmpty()) {
+            throw new EntityNotFoundException("Author with id: " + authorId + " was not found!");
+        }
+        Author author = authorOptional.get();
+        authorRepository.delete(author);
+    }
+
+    @Override
     public List<Author> getAllAuthors() {
         return authorRepository.findALl();
     }

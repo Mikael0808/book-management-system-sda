@@ -10,6 +10,8 @@ public interface AuthorService {
 
     void updateAuthor(int authorId, String firstName, String lastName) throws InvalidParameterException;
 
+    void deleteAuthor(int authorId) throws InvalidParameterException;
+
     List<Author> getAllAuthors();
 
 }
